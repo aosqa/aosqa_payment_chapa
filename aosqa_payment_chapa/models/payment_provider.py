@@ -6,8 +6,8 @@ from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 import json
 import base64
-# from Crypto.PublicKey import RSA
-# from Crypto.Cipher import PKCS1_v1_5
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5
 import binascii
 from odoo.exceptions import AccessError
 
@@ -38,16 +38,9 @@ class PaymentProvider(models.Model):
         string="Chapa callback API URL", help="The base URL for the callback API endpoints",
         required_if_provider='chapa')
     
-    @api.model
-    def create(self, vals):
-        if not self.env.user._is_superuser():
-            raise AccessError("Only superusers can create or edit Payment Data")
-        return super(PaymentProvider, self).create(vals)
-    @api.model
-    def write(self, vals):
-        if not self.env.user._is_superuser():
-            raise AccessError("Only superusers can create or edit Payment Data")
-        return super(PaymentProvider, self).write(vals)
+   
+    
+
     
     def parse_public_key(self,public_key):
         decoded_public_key = base64.b64decode(public_key)
@@ -85,17 +78,17 @@ class PaymentProvider(models.Model):
         return res
 
     def _chapa_make_request(self, url, data=None, method='GET'):
-        callback_url= "https://elearning.daminaa.org"+"/get-status-chapa"
-        return_url="https://elearning.daminaa.org"+"/payment/status"
+        callback_url= "https://yourdomain.org"+"/get-status-chapa"
+        return_url="https:/yourdomain.org"+"/payment/status"
         datua = {
             "data": {
                 "amount": -1,
                 "tx_ref": "",
                 "currency": self.encryptor("ETB"),
-                "first_name": "haile",
-                "email": self.encryptor("areealisho12@gmail.com"),
+                "first_name": "firstname",
+                "email": self.encryptor("test@gmail.com"),
                 "phone_number":self.encryptor('0912000000'),
-                "last_name": "tsega",
+                "last_name": "lastname",
                 "customization": {
                     "title": "Payment",
                     "description": "I love online payments"
