@@ -1,7 +1,8 @@
 {
     'name': 'Payment Provider: chapa',
-    'version': '1.0',
-    'category': 'Hidden',
+    "version": "17.0.1.1.0",
+    "development_status": "Production/Stable",
+    "category": "Accounting",
     'summary': 'chapa Payment Gateway For Website',
     'description': "This module enables seamless payments through chapa, "
                    "ensuring secure and convenient online transactions.",
