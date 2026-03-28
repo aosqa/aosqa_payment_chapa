@@ -13,9 +13,6 @@ class Paymentchapa(http.Controller):
             methods=['POST'], csrf=False, save_session=False, web=True)
     def chapa_return_webhook(self, **kw):
         data = json.loads(request.httprequest.data)
-        for i in  range(100):
-            print(i)
-        print(data)
         callback = data['event'].split('.')[-1]
         trx_ref = data['tx_ref']
         provider = request.env['payment.provider'].sudo().search([('code','=','chapa')])
@@ -30,7 +27,6 @@ class Paymentchapa(http.Controller):
 
         response = requests.get(url, headers=headers, data=payload)
         data = response.json()
-        print(data)
         status = data["status"]
         
         # Process the request
@@ -70,8 +66,6 @@ class Paymentchapa(http.Controller):
             methods=['GET','POST'], csrf=False, save_session=False, web=True)
     def chapa_return(self, **kw):
         # Check if a callback parameter exists for JSONP
-        for i in range(100):
-            print(i)
         callback = kw.get('callback')
         trx_ref = kw.get('trx_ref')
         # Validate required parameters
@@ -87,7 +81,6 @@ class Paymentchapa(http.Controller):
 
         response = requests.get(url, headers=headers, data=payload)
         data = response.json()
-        print(data)
         status = data["status"]
         
         # Process the request
