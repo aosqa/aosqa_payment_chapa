@@ -3,7 +3,7 @@ from werkzeug import urls
 from odoo import api, models, _,fields
 from odoo.exceptions import ValidationError
 from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_chapa.controllers.payment_chapa_odoo import Paymentchapa
+from odoo.addons.aosqa_payment_chapa.controllers.payment_chapa_odoo import Paymentchapa
 
 _logger = logging.getLogger(__name__)
 
