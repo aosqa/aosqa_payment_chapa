@@ -7,7 +7,7 @@
                    "ensuring secure and convenient online transactions.",
     'author': "Abduselam M.",
     'company': '__',
-    'maintainer': 'Abdulselam M.',
+    'maintainer': 'Abdulselam M. abdulselam4246@gmail.com',
     'website': "https://abdulselamt.github.io/portfolio/home.html",
     'depends': ['payment','account'],
     'data': [
