@@ -5,7 +5,7 @@
             <field name="name">chapa</field>
             <field name="code">chapa</field>
             <field name="redirect_form_view_id" ref="redirect_form"/>
-            <field name="image_128" type="base64" file="aosqa_payment_chapa/static/src/description/icon.png"/>
+            <field name="image_128" type="base64" file="aosqa_payment_chapa/static/description/icon.png"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="module_id" ref="base.module_aosqa_payment_chapa"/>
              <field name="payment_method_ids"

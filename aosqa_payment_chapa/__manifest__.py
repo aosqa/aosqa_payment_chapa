@@ -17,7 +17,6 @@
         'views/payment_provider_views.xml',
         'views/payment_transaction_views.xml',
         'data/payment_provider_data.xml',
-        'data/invoice_payment_link.xml'
     ],
   
     'license': 'LGPL-3',
